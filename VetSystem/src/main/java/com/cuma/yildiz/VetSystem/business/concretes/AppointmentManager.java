@@ -42,7 +42,7 @@ public class AppointmentManager implements IAppointmentService {
         Optional<Appointment> existingAppointment = appointmentRepo.findByDoctorIdAndAppointmentDate(
                 appointment.getDoctor().getId() , appointment.getAppointmentDate());
 
-        // Eğer aşı koruyuculuk tarihi bitmemişse ve var olan bir aşı kaydı varsa hata fırlat
+        
         if (!existingAppointment.isEmpty()) {
             throw new IllegalArgumentException("Bu dokturun bu tarihte baska bir randevusu mevcut!!");
 
